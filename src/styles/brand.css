@@ -1,0 +1,21 @@
+/* THARI brand theme — heritage showroom palette (deep maroon, temple gold, ivory).
+   Shaped like a @rajesh-hub/tokens theme so it can be upstreamed there as
+   tokens/thari.css; components must only use these variables, never raw hex. */
+:root {
+  --brand-maroon: #5e1016;
+  --brand-maroon-deep: #3c070c;
+  --brand-maroon-soft: #7d2630;
+  --brand-gold: #c9a24b;
+  --brand-gold-bright: #e8c87a;
+  --brand-gold-deep: #9a7428;
+  --brand-ivory: #fff9ef;
+  --brand-white: #ffffff;
+  --brand-ink: #221812;
+  --brand-ink-soft: #6b5a4e;
+  --brand-line: #ece2d2;
+  --whatsapp: #128c4a;
+  --whatsapp-hover: #0e7a40;
+  --radius: 18px;
+  --shadow-soft: 0 10px 40px rgb(60 7 12 / 0.1);
+  --grad-heritage: linear-gradient(100deg, var(--brand-maroon) 0%, var(--brand-gold-deep) 100%);
+}

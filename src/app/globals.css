@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "../styles/brand.css";
+
+/* Map Tailwind colour utilities onto the brand theme so components never
+   hard-code a brand colour (hub rule). */
+@theme inline {
+  --color-maroon: var(--brand-maroon);
+  --color-maroon-deep: var(--brand-maroon-deep);
+  --color-maroon-soft: var(--brand-maroon-soft);
+  --color-gold: var(--brand-gold);
+  --color-gold-bright: var(--brand-gold-bright);
+  --color-gold-deep: var(--brand-gold-deep);
+  --color-ivory: var(--brand-ivory);
+  --color-ink: var(--brand-ink);
+  --color-ink-soft: var(--brand-ink-soft);
+  --color-line: var(--brand-line);
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-brand: var(--font-marcellus), serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--brand-white);
+  color: var(--brand-ink);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.wordmark {
+  font-family: var(--font-marcellus), serif;
+  letter-spacing: 0.28em;
+}
+
+.grad-text {
+  background: var(--grad-heritage);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 28s linear infinite;
+}
+
+@keyframes col-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes col-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+.col-up { animation: col-up 32s linear infinite; }
+.col-down { animation: col-down 32s linear infinite; }
+
+/* WhatsApp float — markup/classes kept from @rajesh-hub/web-growth WhatsAppFloat */
+.wa-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 0 18px 0 14px;
+  border-radius: 999px;
+  background: var(--whatsapp);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgb(18 140 74 / 0.35);
+}
+.wa-float:hover {
+  background: var(--whatsapp-hover);
+  color: #fff;
+}
+@media (max-width: 480px) {
+  .wa-float__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .wa-float { padding: 0 14px; }
+}
